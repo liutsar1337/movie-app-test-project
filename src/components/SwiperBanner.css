@@ -1,0 +1,152 @@
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  color: black;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide {
+  position: relative;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "";
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.swiper-button-next {
+  background-image: url("../assets/icons/Chevron-Right.svg");
+}
+
+.swiper-button-prev {
+  background-image: url("../assets/icons/Chevron-Left.svg");
+}
+.swiper-button-disabled {
+  background-image: none;
+}
+.swiper-pagination-bullet-active {
+  background-color: white !important;
+}
+.swiper-pagination-bullet {
+  background-color: white;
+}
+
+.halfScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: #fff;
+  text-align: left;
+  padding: 150px;
+  gap: 16px;
+}
+.halfScreen h1 {
+  color: var(--primary-white, #fff);
+
+  /* Desktop/H1 */
+  font-family: Roboto;
+  font-size: 56px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 64px; /* 114.286% */
+}
+.halfScreen p {
+  color: var(--primary-white, #fff);
+  /* Desktop/Body copy */
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 200% */
+}
+.halfScreen button {
+  display: flex;
+  width: 200px;
+  padding: 16px;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 10px;
+  border: 0.5px solid #0feffd;
+  /* background-color: linear-gradient(to right, #0FEFFD, #FF00F5, #0FEFFD38); */
+  background-color: transparent;
+  border-radius: 40px;
+  position: relative;
+  box-shadow: 0px 16px 16px 4px rgba(23, 7, 7, 0.12);
+}
+.halfScreen button:hover {
+  cursor: pointer;
+}
+
+.halfScreen button span {
+  color: #fff;
+  text-shadow: 0px 40px 40px rgba(0, 0, 0, 0.12);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+}
+.overlay {
+  background-color: rgba(0, 0, 0, 0.35);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+}
+.overlay > div {
+  width: 50%;
+}
+
+.leftShadow {
+  height: 100%;
+  width: 180px;
+  position: absolute;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0));
+}
+.rightShadow {
+  height: 100%;
+  width: 180px;
+  position: absolute;
+  right: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+
+.leftShadow.leftNone,
+.rightShadow.rightNone {
+  background: none;
+}
