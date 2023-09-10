@@ -12,7 +12,7 @@ import MovieCard from "./MovieCard";
 import "./FilmContainer.css";
 import PropTypes from "prop-types";
 
-function HorizontalScrollingMenu({ data }) {
+function HorizontalScrollingMenu({ data, isMovie }) {
   const newItemsLimit = 10000;
   const [items, setItems] = useState();
   const [page, setPage] = useState(2);
@@ -29,7 +29,9 @@ function HorizontalScrollingMenu({ data }) {
   const pushNewItems = async () => {
     try {
       const additionalItems = await pagination(
-        requests.requestNowPlayingCustomPage,
+        isMovie
+          ? requests.requestNowPlayingCustomPage
+          : requests.requestFeaturedTVCustomPage,
         page
       );
       const newItems = [...items, ...additionalItems];
@@ -39,27 +41,28 @@ function HorizontalScrollingMenu({ data }) {
     }
   };
   useEffect(() => {
-    setItems(data?.slice(3));
+    setItems(isMovie ? data?.slice(3) : data);
   }, [data]);
 
   return (
     <>
       <div className="scrollingContainer">
-        <div>
+        <div className={!isMovie && "tv"}>
           <ScrollMenu
             LeftArrow={LeftArrow}
             RightArrow={
-              <RightArrow limit={newItemsLimit} pushNewItems={
-                () => {
-                    const newPage = page+1
-                    setPage(newPage)
-                    pushNewItems()
-                }
-              }/>
-            }            
+              <RightArrow
+                limit={newItemsLimit}
+                pushNewItems={() => {
+                  const newPage = page + 1;
+                  setPage(newPage);
+                  pushNewItems();
+                }}
+              />
+            }
           >
             {items?.map((movie) => (
-              <MovieCard movie={movie} key={movie.id} />
+              <MovieCard movie={movie} key={movie.id} isMovie={isMovie} />
             ))}
           </ScrollMenu>
         </div>

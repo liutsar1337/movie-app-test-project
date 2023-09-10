@@ -17,7 +17,7 @@ const MovieCardContainer = () => {
   return (
     <>
       <FilmCategoryLink link="https://www.themoviedb.org/movie/now-playing">New Releases</FilmCategoryLink>
-      <HorizontalScrollingMenu data={movies.results}/>
+      <HorizontalScrollingMenu data={movies.results} isMovie/>
     </>
   );
 };

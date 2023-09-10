@@ -6,7 +6,7 @@ import GenreTag from "../GenreTag";
 import genres from "../../assets/genres";
 import FilmCategoryLink from "./FilmCategoryLink";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, isMovie }) {
   const genreCode = movie.genre_ids[0];
   const genreName = genres[genreCode];
   return (
@@ -14,16 +14,16 @@ function MovieCard({ movie }) {
       <div />
       <img
         className="posterImage"
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+        src={`https://image.tmdb.org/t/p/${isMovie ? 'w500' : 'w780'}${movie.poster_path}`}
       />
       <div className="cardOverlay">
         <GenreTag genreCode={genreCode} genreName={genreName} isMovie />
         <RatingStars data={movie.vote_average} />
-        <p>{movie.original_title}</p>
+        <p>{isMovie ? movie.original_title : movie.name}</p>
         <span className="activeOnHover">
           <FilmCategoryLink
             class="activeOnHover"
-            link={`https://www.themoviedb.org/movie/${movie.id}`}
+            link={`https://www.themoviedb.org/${isMovie ? 'movie' : 'tv'}/${movie.id}`}
           >
             Watch now
           </FilmCategoryLink>

@@ -61,7 +61,12 @@
   width: 292px;
   height: 440px;
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
+}
+.tv .card {
+  width: 504px;
+  height: 736px;
+  margin: 0;
 }
 .card .cardOverlay {
   display: flex;
@@ -71,9 +76,12 @@
   bottom: 0;
   padding: 24px;
   gap: 16px;
-  z-index:1;
+  z-index: 1;
   transform: translate(0, 40px);
   transition: transform 0.3s ease;
+}
+.tv .card .cardOverlay{
+    padding: 40px 24px;
 }
 .card .cardOverlay p {
   font-size: 24px;
@@ -81,29 +89,32 @@
   font-weight: 500;
   line-height: 32px;
 }
+.tv .card .cardOverlay p {
+    font-size: 32px;
+}
 
-.card .cardOverlay .film-category-link{
-    margin:0;
+.card .cardOverlay .film-category-link {
+  margin: 0;
 }
 
 .card .cardOverlay .activeOnHover {
-    visibility:hidden;
+  visibility: hidden;
 }
 
-.card:hover .cardOverlay{
-    transform: translate(0);
+.card:hover .cardOverlay {
+  transform: translate(0);
 }
 
 .card:hover .cardOverlay .activeOnHover {
-    visibility: visible;
+  visibility: visible;
 }
 
 .bottomShadow {
-    position: absolute;
-    bottom:0;
-    width: 100%;
-    height: 50%;
-    background :linear-gradient(to bottom, #1D1D1D00, #0b0b0bcc);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, #1d1d1d00, #0b0b0bcc);
 }
 
 .posterImage {

@@ -15,7 +15,7 @@ const GenreTag = ({ genreName, genreCode, isMovie }) => {
       }`}
       target="_blank"
     >
-      {genreName}
+      {genreName ? genreName : 'Action'}
     </Link>
   );
 };
