@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import genres from "../assets/genres";
-import RatingStars from "./RatingStars";
-import GenreTag from "./GenreTag";
+import genres from "../../assets/genres";
+import RatingStars from "../RatingStars";
+import GenreTag from "../GenreTag";
 import MoviePageLink from "./MoviePageLink";
 
 const SwiperBannerOverlay = ({ data, number, limit }) => {
@@ -44,8 +44,8 @@ SwiperBannerOverlay.propTypes = {
     overview: PropTypes.string,
     id: PropTypes.number,
   }).isRequired,
-  number: PropTypes.shape(PropTypes.number).isRequired,
-  limit: PropTypes.shape(PropTypes.number).isRequired,
+  number: PropTypes.number,
+  limit: PropTypes.number
 };
 
 export default SwiperBannerOverlay;

@@ -1,8 +1,10 @@
-const apiKey = "3deabd483da709910f2706b90bdf2f18";
+// eslint-disable-next-line
+const apiKey = process.env.REACT_APP_API_KEY;
 
 const requests = {
   requestPopular: `https://api.themoviedb.org/3/movie/top_rated?api_key=${apiKey}&page=1`,
   requestNowPlaying: `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=1`,
+  requestNowPlayingCustomPage: `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&page=`
 };
 
 export default requests;

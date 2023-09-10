@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
+import SwiperBanner from "../components/HeroBanner/SwiperBanner";
 import requests from "../Requests";
 import axios from "axios";
-import SwiperBanner from "../components/SwiperBanner";
 
 const HeroBanner = () => {
   const [movies, setMovies] = useState([]);

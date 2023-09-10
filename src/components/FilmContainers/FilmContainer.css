@@ -1,0 +1,159 @@
+* {
+  box-sizing: border-box;
+}
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.film-category-link {
+  display: flex;
+  align-items: center;
+  margin: 24px 52px;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: white;
+  width: fit-content;
+}
+
+.arrowIcon {
+  background-image: url("../../assets/icons/Chevron-Right.svg");
+  height: 20px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: 60%; */
+  /* margin-left: 10px; */
+}
+
+.scrollingContainer {
+  position: relative;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper {
+  position: relative;
+}
+
+.react-horizontal-scrolling-menu--arrow-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.react-horizontal-scrolling-menu--arrow-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+
+.card {
+  display: inline-block;
+  margin: 0 16px 0 0;
+  width: 292px;
+  height: 440px;
+  position: relative;
+  overflow:hidden;
+}
+.card .cardOverlay {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  padding: 24px;
+  gap: 16px;
+  z-index:1;
+  transform: translate(0, 40px);
+  transition: transform 0.3s ease;
+}
+.card .cardOverlay p {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+
+.card .cardOverlay .film-category-link{
+    margin:0;
+}
+
+.card .cardOverlay .activeOnHover {
+    visibility:hidden;
+}
+
+.card:hover .cardOverlay{
+    transform: translate(0);
+}
+
+.card:hover .cardOverlay .activeOnHover {
+    visibility: visible;
+}
+
+.bottomShadow {
+    position: absolute;
+    bottom:0;
+    width: 100%;
+    height: 50%;
+    background :linear-gradient(to bottom, #1D1D1D00, #0b0b0bcc);
+}
+
+.posterImage {
+  background-color: pink;
+  /* height: fit-content; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.posterImage img {
+  max-width: 50%;
+  /* height: auto;  */
+}
+
+.movieCardArrow {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  right: 1%;
+  user-select: none;
+  width: 180px;
+  padding: 0;
+  z-index: 2;
+}
+.movieCardArrow.leftArrow {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+}
+.movieCardArrow.rightArrow {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+}
+
+.scroll-button-prev,
+.scroll-button-next {
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.scroll-button-next {
+  background-image: url("../../assets/icons/Chevron-Right.svg");
+  margin-left: auto;
+}
+
+.scroll-button-prev {
+  background-image: url("../../assets/icons/Chevron-Left.svg");
+}
