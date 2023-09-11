@@ -13,7 +13,7 @@ const FilmCategoryLink = (props) => {
         target="_blank"
         style={linkStyle}
         to={props.link}
-        className="film-category-link"
+        className={`film-category-link ${props.className}`}
       >
         <span>{props.children}</span>
         <span className="arrowIcon"></span>
@@ -25,6 +25,7 @@ const FilmCategoryLink = (props) => {
 FilmCategoryLink.propTypes = {
   children: PropTypes.node.isRequired,
   link: PropTypes.string.isRequired,
+  className: PropTypes.string,
 };
 
 export default FilmCategoryLink;

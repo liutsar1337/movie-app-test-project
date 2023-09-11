@@ -21,6 +21,12 @@
   color: white;
   width: fit-content;
 }
+.TVCategoryLink {
+  margin: 40px 52px 24px;
+}
+.MovieCategoryLink {
+  margin: 24px 52px;
+}
 
 .arrowIcon {
   background-image: url("../../assets/icons/Chevron-Right.svg");
@@ -80,8 +86,8 @@
   transform: translate(0, 40px);
   transition: transform 0.3s ease;
 }
-.tv .card .cardOverlay{
-    padding: 40px 24px;
+.tv .card .cardOverlay {
+  padding: 40px 24px;
 }
 .card .cardOverlay p {
   font-size: 24px;
@@ -90,7 +96,7 @@
   line-height: 32px;
 }
 .tv .card .cardOverlay p {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .card .cardOverlay .film-category-link {
@@ -146,9 +152,11 @@
 }
 .movieCardArrow.leftArrow {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  transition: opacity 0.3s ease;
 }
 .movieCardArrow.rightArrow {
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  transition: opacity 0.3s ease;
 }
 
 .scroll-button-prev,

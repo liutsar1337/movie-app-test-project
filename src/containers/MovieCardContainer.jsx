@@ -11,13 +11,17 @@ const MovieCardContainer = () => {
     axios.get(requests.requestNowPlaying).then((response) => {
       setMovies(response.data);
     });
-    console.log(movies)
   }, []);
-  
+
   return (
     <>
-      <FilmCategoryLink link="https://www.themoviedb.org/movie/now-playing">New Releases</FilmCategoryLink>
-      <HorizontalScrollingMenu data={movies.results} isMovie/>
+      <FilmCategoryLink
+        className={"MovieCategoryLink"}
+        link="https://www.themoviedb.org/movie/now-playing"
+      >
+        New Releases
+      </FilmCategoryLink>
+      <HorizontalScrollingMenu data={movies.results} isMovie />
     </>
   );
 };

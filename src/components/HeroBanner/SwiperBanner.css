@@ -14,8 +14,6 @@ p {
   text-align: center;
   font-size: 18px;
   background: #fff;
-
-  /* Center slide text vertically */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,6 +44,7 @@ p {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 60%;
+  transition: all 0.3s ease;
 }
 
 .swiper-button-next {
@@ -72,7 +71,7 @@ p {
   justify-content: center;
   color: #fff;
   text-align: left;
-  padding: 150px;
+  padding: 164px 0px 164px 236px ;
   gap: 16px;
 }
 .halfScreen h1 {

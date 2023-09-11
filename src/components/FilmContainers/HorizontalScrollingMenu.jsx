@@ -19,7 +19,6 @@ function HorizontalScrollingMenu({ data, isMovie }) {
   const pagination = async (baseLink, page) => {
     try {
       const response = await axios.get(`${baseLink}${page}`);
-      console.log(response.data.results);
       return response.data.results;
     } catch (error) {
       console.error("Error fetching new data:", error);
@@ -47,7 +46,7 @@ function HorizontalScrollingMenu({ data, isMovie }) {
   return (
     <>
       <div className="scrollingContainer">
-        <div className={!isMovie && "tv"}>
+        <div className={`${!isMovie && "tv"}`}>
           <ScrollMenu
             LeftArrow={LeftArrow}
             RightArrow={

@@ -13,12 +13,11 @@ const TVCardContainer = () => {
     axios.get(requests.requestFeaturedTV).then((response) => {
       setTvShows(response.data);
     });
-    console.log(tvShows)
   }, []);
   
   return (
     <>
-      <FilmCategoryLink link="https://www.themoviedb.org/tv">Featured TV shows</FilmCategoryLink>
+      <FilmCategoryLink className={"TVCategoryLink"} link="https://www.themoviedb.org/tv">Featured TV shows</FilmCategoryLink>
       <HorizontalScrollingMenu data={tvShows.results}/>
     </>
   );
