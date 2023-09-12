@@ -1,3 +1,4 @@
+/* Genre Tag Styles */
 .genreTag {
   display: flex;
   padding: 4px 8px;
@@ -17,13 +18,20 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+/* Footer Styles */
 .footer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: flex-end;
+  gap:2 px;
   margin: 64px;
-  text-align: right;
+  text-align: left;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
-  line-height: 16px; /* 133.333% */
+  line-height: 16px;
 }
 .footer a {
   color:#0FEFFD;
@@ -33,3 +41,40 @@
   height: 12px;
   transform: translateY(2px);
 }
+
+@media (max-width: 1366px) {
+  .genreTag {
+    font-size: 16px;
+  }
+  .footer {
+    margin: 46px
+  }
+}
+@media (max-width: 1024px) {
+  .footer {
+    margin: 42px;
+    align-content: center;
+  }
+}
+@media (max-width: 800px) {
+  .genreTag {
+    font-size: 14px;
+  }
+  .footer {
+    margin: 36px
+  }
+  .movie .ratingStars {
+    transform:scale(0.7) translateX(-15px)
+  }
+}
+@media (max-width: 600px) {
+  .genreTag {
+    font-size: 12px;
+  }
+  .footer {
+    margin: 24px;
+    line-height: 14px;
+    font-size: 10px;
+  }
+}
+

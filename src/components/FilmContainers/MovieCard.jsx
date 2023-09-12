@@ -18,7 +18,7 @@ function MovieCard({ movie, isMovie }) {
       />
       <div className="cardOverlay">
         <GenreTag genreCode={genreCode} genreName={genreName} isMovie />
-        <RatingStars data={movie.vote_average} />
+        <RatingStars size={12} data={movie.vote_average} />
         <p>{isMovie ? movie.original_title : movie.name}</p>
         <span className="activeOnHover">
           <FilmCategoryLink

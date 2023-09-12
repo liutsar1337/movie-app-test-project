@@ -46,7 +46,7 @@ function HorizontalScrollingMenu({ data, isMovie }) {
   return (
     <>
       <div className="scrollingContainer">
-        <div className={`${!isMovie && "tv"}`}>
+        <div className={`${isMovie ? 'movie' : 'tv'}`}>
           <ScrollMenu
             LeftArrow={LeftArrow}
             RightArrow={

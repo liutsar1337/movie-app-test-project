@@ -13,7 +13,6 @@
 .film-category-link {
   display: flex;
   align-items: center;
-  margin: 24px 52px;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -60,7 +59,10 @@
   bottom: 0;
   top: 0;
 }
-
+.ratingStars {
+  /* padding: 3px; */
+  /* width: 500px; */
+}
 .card {
   display: inline-block;
   margin: 0 16px 0 0;
@@ -68,6 +70,7 @@
   height: 440px;
   position: relative;
   overflow: hidden;
+  transition: width 0.4s ease;
 }
 .tv .card {
   width: 504px;
@@ -146,9 +149,13 @@
   justify-content: center;
   right: 1%;
   user-select: none;
-  width: 180px;
+  width: 150px;
+  height: 99.5%;
   padding: 0;
   z-index: 2;
+}
+.movie .movieCardArrow {
+  width: 100px;
 }
 .movieCardArrow.leftArrow {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
@@ -176,3 +183,213 @@
 .scroll-button-prev {
   background-image: url("../../assets/icons/Chevron-Left.svg");
 }
+
+@media (max-width: 1366px) {
+  .card {
+    margin: 0 12px 0 0;
+    width: 200px;
+    height: auto;
+  }
+  .tv .card {
+    width: 320px;
+    height: auto;
+  }
+  .card .cardOverlay {
+    padding: 20px;
+    gap: 8px;
+    transform: translate(0, 40px);
+    transition: transform 0.3s ease;
+  }
+  .tv .card .cardOverlay {
+    padding: 30px 18px;
+    gap: 12px;
+  }
+
+  .card:hover .cardOverlay {
+    transform: translateY(6px);
+  }
+  .tv .card:hover .cardOverlay {
+    transform: translateY(12px);
+  }
+
+  .card .cardOverlay p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 32px;
+  }
+  .film-category-link {
+    font-size: 16px;
+  }
+  .TVCategoryLink {
+    margin: 32px 52px 20px;
+  }
+  .MovieCategoryLink {
+    margin: 20px 52px;
+  }
+  .movieCardArrow {
+    width: 100px;
+  }
+  .movie .movieCardArrow {
+    width: 60px;
+  }
+  .card .genreTag {
+    font-size: 14px;
+  }
+  .tv .card .genreTag {
+    font-size: 16px;
+  }
+}
+
+/* Tablet Size */
+@media (max-width: 1024px) {
+  .card {
+    margin: 0 12px 0 0;
+  }
+  .card .cardOverlay {
+    padding: 20px;
+    gap: 10px;
+    transform: translate(0, 40px);
+    transition: transform 0.3s ease;
+  }
+  .tv .card .cardOverlay {
+    padding: 30px 18px;
+    gap: 12px;
+  }
+  .card .cardOverlay p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 32px;
+  }
+  .film-category-link {
+    font-size: 16px;
+  }
+  .TVCategoryLink {
+    margin: 32px 52px 20px;
+  }
+  .MovieCategoryLink {
+    margin: 20px 52px;
+  }
+  .movieCardArrow {
+    width: 100px;
+  }
+  .card .genreTag {
+    font-size: 14px;
+  }
+  .tv .card .genreTag {
+    font-size: 16px;
+  }
+}
+
+/* Phone Landscape Size */
+@media (max-width: 800px) {
+  .card {
+    margin: 0 12px 0 0;
+    width: 160px;
+    height: auto;
+  }
+  .tv .card {
+    width: 250px;
+    height: auto;
+  }
+  .card .cardOverlay {
+    padding: 20px;
+    gap: 6px;
+    transform: translate(0, 40px);
+    transition: transform 0.3s ease;
+  }
+  .tv .card .cardOverlay {
+    padding: 30px 18px;
+    gap: 8px;
+  }
+  .card .cardOverlay p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .film-category-link {
+    font-size: 16px;
+  }
+  .TVCategoryLink {
+    margin: 32px 52px 20px;
+  }
+  .MovieCategoryLink {
+    margin: 20px 52px;
+  }
+  .movieCardArrow {
+    width: 100px;
+  }
+  .card .genreTag {
+    font-size: 10px;
+  }
+  .tv .card .genreTag {
+    font-size: 16px;
+  }
+}
+/* Phone Portrait Size */
+@media (max-width: 600px) {
+  .card {
+    margin: 0 10px 0 0;
+    width: 120px;
+    height: auto;
+  }
+  .tv .card {
+    width: 180px;
+    height: auto;
+  }
+  .card .cardOverlay {
+    padding: 12px;
+    gap: 0px;
+    transform: translate(0, 28px);
+  }
+  .tv .card .cardOverlay {
+    padding: 24px 16px;
+    gap: 4px;
+    transform: translate(0, 40px)
+  }
+
+  .tv .card:hover .cardOverlay{
+    transform: translateY(15px);
+  }
+
+  .card .cardOverlay p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .movie .film-category-link {
+    font-size: 10px; 
+  }
+
+  .movie .arrowIcon {
+    transform:translateX(-10px);
+    background-size:40%;
+  }
+
+  .MovieCategoryLink {
+    margin: 12px 20px;
+  }
+  .TVCategoryLink {
+    margin: 20px 20px 12px;
+  }
+  .movieCardArrow {
+    width: 50px;
+  }
+  .card .genreTag {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+  .tv .card .genreTag {
+    font-size: 10px;
+  }
+}
+
