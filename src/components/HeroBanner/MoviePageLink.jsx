@@ -8,9 +8,8 @@ const MoviePageLink = (props) => {
   };
   return (
     <Link
-      target="_blank"
       style={linkStyle}
-      to={`https://www.themoviedb.org/${props.isMovie ? "movie" : "tv"}/${
+      to={`${props.isMovie ? "movie" : "tv"}/${
         props.id
       }`}
     >

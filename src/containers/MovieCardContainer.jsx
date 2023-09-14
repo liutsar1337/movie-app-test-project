@@ -21,7 +21,7 @@ const MovieCardContainer = () => {
       >
         New Releases
       </FilmCategoryLink>
-      <HorizontalScrollingMenu data={movies.results} isMovie />
+      <HorizontalScrollingMenu data={movies?.results} isMovie />
     </>
   );
 };

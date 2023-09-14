@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -14,7 +14,13 @@ import "swiper/css/pagination";
 import "./SwiperBanner.css";
 
 // import required modules
-import { Navigation, Pagination, Mousewheel, Keyboard } from "swiper/modules";
+import {
+  Autoplay,
+  Navigation,
+  Pagination,
+  Mousewheel,
+  Keyboard,
+} from "swiper/modules";
 
 var pageNumbers = 3;
 
@@ -22,20 +28,30 @@ export default function SwiperBanner(props) {
   return (
     <>
       <Swiper
+        className="mySwiper"
+        loop
         cssMode={true}
         navigation={true}
         pagination={true}
         mousewheel={true}
         keyboard={true}
-        modules={[Navigation, Pagination, Mousewheel, Keyboard]}
-        className="mySwiper"
+        modules={[Autoplay, Navigation, Pagination, Mousewheel, Keyboard]}
+        autoplay={{
+          delay: 4000,
+          pauseOnMouseEnter: true,
+          disableOnInteraction: true
+        }}
       >
         {props?.data?.slice(0, pageNumbers).map((movie, index) => (
           <SwiperSlide className="slide" key={index}>
             <img
               src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
             />
-            <SwiperBannerOverlay data={movie} number={index} limit={pageNumbers} className="overlay" />
+            <SwiperBannerOverlay
+              data={movie}
+              number={index}
+              className="overlay"
+            />
           </SwiperSlide>
         ))}
       </Swiper>

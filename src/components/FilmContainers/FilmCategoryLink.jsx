@@ -10,7 +10,6 @@ const FilmCategoryLink = (props) => {
   return (
     <div>
       <Link
-        target="_blank"
         style={linkStyle}
         to={props.link}
         className={`film-category-link ${props.className}`}

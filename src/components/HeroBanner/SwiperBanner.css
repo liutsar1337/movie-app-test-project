@@ -155,11 +155,6 @@ p {
   background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
 }
 
-.leftShadow.leftNone,
-.rightShadow.rightNone {
-  background: none;
-}
-
 /* Tablet Size */
 @media (max-width: 1366px) {
   .swiper-slide {

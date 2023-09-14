@@ -23,8 +23,9 @@ function MovieCard({ movie, isMovie }) {
         <span className="activeOnHover">
           <FilmCategoryLink
             class="activeOnHover"
-            link={`https://www.themoviedb.org/${isMovie ? 'movie' : 'tv'}/${movie.id}`}
+            link={`${isMovie ? 'movie' : 'tv'}/${movie.id}`}
           >
+
             Watch now
           </FilmCategoryLink>
         </span>

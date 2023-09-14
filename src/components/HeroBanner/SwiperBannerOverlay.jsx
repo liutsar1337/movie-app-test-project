@@ -5,15 +5,14 @@ import RatingStars from "../RatingStars";
 import GenreTag from "../GenreTag";
 import MoviePageLink from "./MoviePageLink";
 
-const SwiperBannerOverlay = ({ data, number, limit }) => {
+const SwiperBannerOverlay = ({ data }) => {
   const genreCode = data.genre_ids[0];
   const genreName = genres[genreCode];
   return (
     <>
       <div className="overlay">
         <span
-          className={`leftShadow 
-        ${number === 0 && "leftNone"}`}
+          className={`leftShadow`}
         ></span>
         <div className="halfScreen">
           <GenreTag genreCode={genreCode} genreName={genreName} isMovie />
@@ -27,10 +26,7 @@ const SwiperBannerOverlay = ({ data, number, limit }) => {
           </MoviePageLink>
         </div>
         <div></div>
-        <span
-          className={`rightShadow
-        ${number === limit - 1 && "rightNone"}`}
-        ></span>
+        <span className={`rightShadow}`}></span>
       </div>
     </>
   );
@@ -45,7 +41,7 @@ SwiperBannerOverlay.propTypes = {
     id: PropTypes.number,
   }).isRequired,
   number: PropTypes.number,
-  limit: PropTypes.number
+  limit: PropTypes.number,
 };
 
 export default SwiperBannerOverlay;
