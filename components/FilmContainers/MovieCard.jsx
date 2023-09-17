@@ -3,7 +3,7 @@ import RatingStars from "@components/RatingStars";
 import GenreTag from "@components/GenreTag";
 import genres from "@utils/genres";
 import FilmCategoryLink from "./FilmCategoryLink";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function MovieCard({ movie, isMovie }) {
   const genreCode = movie.genre_ids[0];

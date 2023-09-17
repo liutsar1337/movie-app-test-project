@@ -123,8 +123,7 @@
 }
 
 .posterImage {
-  background-color: pink;
-  /* height: fit-content; */
+  background-color: #434343;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -133,7 +132,6 @@
 
 .posterImage img {
   max-width: 50%;
-  /* height: auto;  */
 }
 
 .movieCardArrow {

@@ -24,7 +24,7 @@ const SwiperBannerOverlay = ({ data }) => {
           </MoviePageLink>
         </div>
         <div></div>
-        <span className={`rightShadow}`}></span>
+        <span className={`rightShadow`}></span>
       </div>
     </>
   );

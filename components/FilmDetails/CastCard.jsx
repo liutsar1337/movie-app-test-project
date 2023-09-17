@@ -1,6 +1,6 @@
 /* eslint-disable */
 import "../FilmDetails/FilmDetails.css";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function CastCard({ actor }) {
   return (
