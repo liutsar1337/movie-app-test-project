@@ -1,0 +1,389 @@
+* {
+  box-sizing: border-box;
+}
+.react-horizontal-scrolling-menu--scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+.react-horizontal-scrolling-menu--scroll-container {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.film-category-link {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  color: white;
+  width: fit-content;
+}
+.TVCategoryLink {
+  margin: 40px 52px 24px;
+}
+.MovieCategoryLink {
+  margin: 24px 52px;
+}
+
+.arrowIcon {
+  background-image: url("../../assets/icons/Chevron-Right.svg");
+  height: 20px;
+  width: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-size: 60%; */
+  /* margin-left: 10px; */
+}
+
+.scrollingContainer {
+  position: relative;
+}
+
+.react-horizontal-scrolling-menu--inner-wrapper {
+  position: relative;
+}
+
+.react-horizontal-scrolling-menu--arrow-left {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 1;
+}
+
+.react-horizontal-scrolling-menu--arrow-right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  top: 0;
+}
+.card {
+  display: inline-block;
+  margin: 0 16px 0 0;
+  width: 292px;
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  /* transition: width 0.4s ease; */
+}
+.tv .card {
+  width: 504px;
+  height: 736px;
+  margin: 0;
+}
+.card .cardOverlay {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: flex-end;
+  bottom: 0;
+  padding: 24px;
+  gap: 16px;
+  z-index: 1;
+  transform: translate(0, 40px);
+  transition: transform 0.3s ease;
+}
+.tv .card .cardOverlay {
+  padding: 40px 24px;
+}
+.card .cardOverlay p {
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+}
+.tv .card .cardOverlay p {
+  font-size: 32px;
+}
+
+.card .cardOverlay .film-category-link {
+  margin: 0;
+}
+
+.card .cardOverlay .activeOnHover {
+  visibility: hidden;
+}
+
+.card:hover .cardOverlay {
+  transform: translate(0);
+}
+
+.card:hover .cardOverlay .activeOnHover {
+  visibility: visible;
+}
+
+.bottomShadow {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to bottom, #1d1d1d00, #0b0b0bcc);
+}
+
+.posterImage {
+  background-color: pink;
+  /* height: fit-content; */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.posterImage img {
+  max-width: 50%;
+  /* height: auto;  */
+}
+
+.movieCardArrow {
+  background-color: transparent;
+  border: none;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  right: 1%;
+  user-select: none;
+  width: 150px;
+  height: 99.5%;
+  padding: 0;
+  z-index: 2;
+}
+.movie .movieCardArrow {
+  width: 100px;
+}
+.movieCardArrow.leftArrow {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0));
+  transition: opacity 0.3s ease;
+}
+.movieCardArrow.rightArrow {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6));
+  transition: opacity 0.3s ease;
+}
+
+.scroll-button-prev,
+.scroll-button-next {
+  height: 50px;
+  width: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+}
+
+.scroll-button-next {
+  background-image: url("../../assets/icons/Chevron-Right.svg");
+  margin-left: auto;
+}
+
+.scroll-button-prev {
+  background-image: url("../../assets/icons/Chevron-Left.svg");
+}
+
+@media (max-width: 1366px) {
+  .card {
+    margin: 0 12px 0 0;
+    width: 200px;
+    height: auto;
+  }
+  .tv .card {
+    width: 320px;
+    height: auto;
+  }
+  .card .cardOverlay {
+    padding: 20px;
+    gap: 8px;
+    transform: translate(0, 40px);
+    /* transition: transform 0.3s ease; */
+  }
+  .tv .card .cardOverlay {
+    padding: 30px 18px;
+    gap: 12px;
+  }
+
+  .card:hover .cardOverlay {
+    transform: translateY(6px);
+  }
+  .tv .card:hover .cardOverlay {
+    transform: translateY(12px);
+  }
+
+  .card .cardOverlay p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 32px;
+  }
+  .film-category-link {
+    font-size: 16px;
+  }
+  .TVCategoryLink {
+    margin: 32px 52px 20px;
+  }
+  .MovieCategoryLink {
+    margin: 20px 52px;
+  }
+  .movieCardArrow {
+    width: 100px;
+  }
+  .movie .movieCardArrow {
+    width: 60px;
+  }
+  .card .genreTag {
+    font-size: 14px;
+  }
+  .tv .card .genreTag {
+    font-size: 16px;
+  }
+}
+
+/* Tablet Size */
+@media (max-width: 1024px) {
+  .card {
+    margin: 0 12px 0 0;
+  }
+  .card .cardOverlay {
+    padding: 20px;
+    gap: 10px;
+    transform: translate(0, 40px);
+  }
+  .tv .card .cardOverlay {
+    padding: 30px 18px;
+    gap: 12px;
+  }
+  .card .cardOverlay p {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 32px;
+  }
+  .film-category-link {
+    font-size: 16px;
+  }
+  .TVCategoryLink {
+    margin: 32px 52px 20px;
+  }
+  .MovieCategoryLink {
+    margin: 20px 52px;
+  }
+  .movieCardArrow {
+    width: 100px;
+  }
+  .card .genreTag {
+    font-size: 14px;
+  }
+  .tv .card .genreTag {
+    font-size: 16px;
+  }
+}
+
+/* Phone Landscape Size */
+@media (max-width: 800px) {
+  .card {
+    margin: 0 12px 0 0;
+    width: 160px;
+    height: auto;
+  }
+  .tv .card {
+    width: 250px;
+    height: auto;
+  }
+  .card .cardOverlay {
+    padding: 20px;
+    gap: 6px;
+    transform: translate(0, 40px);
+  }
+  .tv .card .cardOverlay {
+    padding: 30px 18px;
+    gap: 8px;
+  }
+  .card .cardOverlay p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 24px;
+    line-height: 24px;
+  }
+  .film-category-link {
+    font-size: 16px;
+  }
+  .TVCategoryLink {
+    margin: 32px 52px 20px;
+  }
+  .MovieCategoryLink {
+    margin: 20px 52px;
+  }
+  .movieCardArrow {
+    width: 100px;
+  }
+  .card .genreTag {
+    font-size: 10px;
+  }
+  .tv .card .genreTag {
+    font-size: 16px;
+  }
+}
+/* Phone Portrait Size */
+@media (max-width: 600px) {
+  .card {
+    margin: 0 10px 0 0;
+    width: 120px;
+    height: auto;
+  }
+  .tv .card {
+    width: 180px;
+    height: auto;
+  }
+  .card .cardOverlay {
+    padding: 12px;
+    gap: 0px;
+    transform: translate(0, 28px);
+  }
+  .tv .card .cardOverlay {
+    padding: 24px 16px;
+    gap: 4px;
+    transform: translate(0, 40px)
+  }
+
+  .tv .card:hover .cardOverlay{
+    transform: translateY(15px);
+  }
+
+  .card .cardOverlay p {
+    font-size: 12px;
+    line-height: 14px;
+  }
+  .tv .card .cardOverlay p {
+    font-size: 16px;
+    line-height: 18px;
+  }
+  .movie .film-category-link {
+    font-size: 10px; 
+  }
+
+  .movie .arrowIcon {
+    transform:translateX(-10px);
+    background-size:40%;
+  }
+
+  .MovieCategoryLink {
+    margin: 12px 20px;
+  }
+  .TVCategoryLink {
+    margin: 20px 20px 12px;
+  }
+  .movieCardArrow {
+    width: 50px;
+  }
+  .card .genreTag {
+    font-size: 8px;
+    padding: 2px 6px;
+  }
+  .tv .card .genreTag {
+    font-size: 10px;
+  }
+}
+
