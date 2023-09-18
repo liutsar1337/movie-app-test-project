@@ -35,11 +35,10 @@ const FilmPage = ({id, isMovie}) => {
   useEffect(() => {
     axios
       .get(
-        requests.requestMovie +
+        '/api/filmPage/requestMovie/' +
           `${isMovie ? "movie" : "tv"}` +
           "/" +
-          id +
-          requests.apiKey
+          id
       )
       .then((response) => {
         setMovies(response.data);

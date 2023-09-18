@@ -16,7 +16,7 @@ function HorizontalScrollingMenu({ data, isMovie }) {
   const [page, setPage] = useState(2);
   const pagination = async (baseLink, page) => {
     try {
-      const response = await axios.get(`${baseLink}${page}`);
+      const response = await axios.get(`/api/withPage/${baseLink}/${page}`);
       return response.data.results;
     } catch (error) {
       console.error("Error fetching new data:", error);
@@ -27,8 +27,8 @@ function HorizontalScrollingMenu({ data, isMovie }) {
     try {
       const additionalItems = await pagination(
         isMovie
-          ? requests.requestNowPlayingCustomPage
-          : requests.requestFeaturedTVCustomPage,
+          ? 'requestNowPlayingCustomPage'
+          : 'requestFeaturedTVCustomPage',
         page
       );
       const newItems = [...items, ...additionalItems];

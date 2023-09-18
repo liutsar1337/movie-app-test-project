@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import requests from "@utils/Requests";
 import axios from "axios";
 import HeroBanner from "@containers/HeroBanner";
 import MovieCardContainer from "@containers/MovieCardContainer";
@@ -14,8 +13,8 @@ const Home = () => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const tvResponse = await axios.get(requests.requestFeaturedTV);
-        const movieResponse = await axios.get(requests.requestNowPlaying);
+        const tvResponse = await axios.get("/api/exact/requestFeaturedTV");
+        const movieResponse = await axios.get("/api/exact/requestNowPlaying");
 
         setTvShows(tvResponse.data);
         setMovies(movieResponse.data);
