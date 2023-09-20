@@ -99,10 +99,10 @@ const FilmPage: React.FC<FilmPageProps> = ({ id, isMovie }: FilmPageProps) => {
             <div className="genresGroup">
               {movies?.genres
                 ?.slice(0, 3)
-                ?.map((genreCode: any, index: number) => (
+                ?.map(({ id }: any, index: number) => (
                   <GenreTag
-                    genreCode={genreCode.id}
-                    genreName={genres[genreCode.id]}
+                    genreCode={id}
+                    genreName={genres[id]}
                     isMovie
                     key={index}
                   />

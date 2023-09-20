@@ -1,9 +1,8 @@
-import { GetServerSideProps } from 'next';
-import FilmPage from '@containers/FilmPage';
+import FilmPage from "@containers/FilmPage";
 
 export const metadata = {
-  title: 'Movie Details',
-  description: 'Discover & Share Your Favorite Movies',
+  title: "Movie Details",
+  description: "Discover & Share Your Favorite Movies",
 };
 
 interface PageProps {
@@ -17,11 +16,3 @@ const Page: React.FC<PageProps> = ({ params }) => {
 };
 
 export default Page;
-
-export const getServerSideProps: GetServerSideProps = async ({ params }) => {
-  return {
-    props: {
-      params,
-    },
-  };
-};

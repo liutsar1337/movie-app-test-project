@@ -14,8 +14,8 @@ const RatingStars: React.FC<RatingStarsProps> = ({
     <>
       <Rating
         className="ratingStars"
-        size={"16px"}
         initialValue={data / 2}
+        size={16}
         fillColor="ffffff"
         emptyColor="darkgray"
         allowFraction

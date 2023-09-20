@@ -21,6 +21,6 @@
       }
     ]
   },
-  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", ".next/types/**/*.ts", "**/*.ts", "**/*.tsx", "app/api/withPage/[query]/[page]/route.ts", "app/api/filmPage/[query]/[isMovie]/[id]/route.ts", "app/api/exact/[query]/route.ts"],
   "exclude": ["node_modules"]
 }
