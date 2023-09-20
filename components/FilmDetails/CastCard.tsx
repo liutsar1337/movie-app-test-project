@@ -1,8 +1,13 @@
-/* eslint-disable */
-import "../FilmDetails/FilmDetails.css";
-import Image from "next/legacy/image";
+import React from 'react';
+import { Actor } from '@utils/types';
+import '../FilmDetails/FilmDetails.css';
+import Image from 'next/legacy/image';
 
-function CastCard({ actor }) {
+interface CastCardProps {
+  actor: Actor | null;
+}
+
+function CastCard({ actor }: CastCardProps) {
   return (
     actor?.profile_path && (
       <div role="button" tabIndex={0} className="castCard card">
@@ -13,6 +18,7 @@ function CastCard({ actor }) {
           layout="responsive"
           className="posterImage"
           src={`https://image.tmdb.org/t/p/w500${actor?.profile_path}`}
+          alt={actor?.name || 'Actor Profile'}
         />
         <div className="cardOverlay">
           <p>{actor?.character}</p>

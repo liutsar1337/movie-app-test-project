@@ -1,14 +1,21 @@
+import React from "react";
 import { Rating } from "react-simple-star-rating";
-import PropTypes from "prop-types"; // Import PropTypes
 import "./FilmContainers/FilmContainer.css";
 
-export function RatingStars(props) {
+interface RatingStarsProps {
+  data: number;
+  size?: number;
+}
+
+const RatingStars: React.FC<RatingStarsProps> = ({
+  data,
+}: RatingStarsProps) => {
   return (
     <>
       <Rating
         className="ratingStars"
-        size={'16px'}
-        initialValue={props.data / 2}
+        size={"16px"}
+        initialValue={data / 2}
         fillColor="ffffff"
         emptyColor="darkgray"
         allowFraction
@@ -16,10 +23,6 @@ export function RatingStars(props) {
       />
     </>
   );
-}
-
-RatingStars.propTypes = {
-  data: PropTypes.number, // Define prop type for 'rating'
 };
 
 export default RatingStars;

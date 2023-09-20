@@ -5,10 +5,11 @@ import axios from "axios";
 import HeroBanner from "@containers/HeroBanner";
 import MovieCardContainer from "@containers/MovieCardContainer";
 import TVCardContainer from "@containers/TVCardContainer";
+import { MovieListResponse } from "@utils/types";
 
-const Home = () => {
-  const [tvShows, setTvShows] = useState([])
-  const [movies, setMovies] = useState([]);
+const Home: React.FC = () => {
+  const [tvShows, setTvShows] = useState<MovieListResponse>();
+  const [movies, setMovies] = useState<MovieListResponse>();
 
   useEffect(() => {
     async function fetchData() {
@@ -22,15 +23,13 @@ const Home = () => {
         console.error("Error fetching data:", error);
       }
     }
-
     fetchData();
   }, []);
-  
   return (
     <>
       <HeroBanner movies={movies} />
       <MovieCardContainer movies={movies} />
-      <TVCardContainer tvShows={tvShows}/>
+      <TVCardContainer tvShows={tvShows} />
     </>
   );
 };

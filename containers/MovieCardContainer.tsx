@@ -1,7 +1,10 @@
 import FilmCategoryLink from "@components/FilmContainers/FilmCategoryLink";
 import HorizontalScrollingMenu from "@components/FilmContainers/HorizontalScrollingMenu";
+import { LandingPageProps } from "@utils/types";
 
-const MovieCardContainer = ({movies}) => {
+const MovieCardContainer: React.FC<LandingPageProps> = ({
+  movies,
+}: LandingPageProps) => {
   return (
     <>
       <FilmCategoryLink

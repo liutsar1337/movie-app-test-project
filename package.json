@@ -17,5 +17,10 @@
     "react-horizontal-scrolling-menu": "^4.1.0",
     "react-simple-star-rating": "^5.1.7",
     "swiper": "^10.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.22",
+    "typescript": "^5.2.2"
   }
 }

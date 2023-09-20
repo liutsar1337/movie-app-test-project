@@ -1,13 +1,20 @@
-/* eslint-disable */
+import React from "react";
 import RatingStars from "@components/RatingStars";
 import GenreTag from "@components/GenreTag";
 import genres from "@utils/genres";
 import FilmCategoryLink from "./FilmCategoryLink";
 import Image from "next/legacy/image";
+import { Movie } from "@utils/types";
 
-function MovieCard({ movie, isMovie }) {
+interface MovieCardProps {
+  movie: Movie;
+  isMovie: boolean;
+}
+
+function MovieCard({ movie, isMovie }: MovieCardProps) {
   const genreCode = movie.genre_ids[0];
   const genreName = genres[genreCode];
+
   return (
     <div role="button" tabIndex={0} className="card">
       <div />
@@ -18,16 +25,20 @@ function MovieCard({ movie, isMovie }) {
         alt="movieCardName"
         className="posterImage"
         src={`https://image.tmdb.org/t/p/${isMovie ? "w500" : "w780"}${
-          movie.poster_path
+          movie?.poster_path
         }`}
       />
       <div className="cardOverlay">
-        <GenreTag genreCode={genreCode} genreName={genreName} isMovie />
+        <GenreTag
+          genreCode={genreCode}
+          genreName={genreName}
+          isMovie={isMovie}
+        />
         <RatingStars size={12} data={movie.vote_average} />
         <p>{isMovie ? movie.original_title : movie.name}</p>
         <span className="activeOnHover">
           <FilmCategoryLink
-            class="activeOnHover"
+            className="activeOnHover"
             link={`${isMovie ? "movie" : "tv"}/${movie.id}`}
           >
             Watch now
@@ -40,4 +51,3 @@ function MovieCard({ movie, isMovie }) {
 }
 
 export default MovieCard;
-``;
